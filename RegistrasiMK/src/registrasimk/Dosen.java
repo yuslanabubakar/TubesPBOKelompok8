@@ -9,6 +9,8 @@ package registrasimk;
  *
  * @author PRAKTIKUM
  */
-public class Dosen {
-    
+public class Dosen extends Orang{
+    public Dosen(String nama, String id) {
+        super(nama,id);
+    }
 }
