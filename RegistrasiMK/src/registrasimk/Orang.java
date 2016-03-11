@@ -13,6 +13,10 @@ public abstract class Orang {
     private String nama;
     private String id;
     
+    public Orang(String nama, String id) {
+        this.nama = nama;
+        this.id = id;
+    }
     public void setNama(String nama) {
         this.nama = nama;
     }
@@ -24,8 +28,5 @@ public abstract class Orang {
     }
     public String getID() {
         return id;
-    }
-    public void display() {
-        
     }
 } 
