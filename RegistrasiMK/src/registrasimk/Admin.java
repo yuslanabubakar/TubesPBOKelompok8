@@ -27,7 +27,7 @@ public class Admin extends Orang {
 	}
 	
 	public void setpasswordAdmin (String passwordAdmin) {
-		this.setpasswordAdmin = setpasswordAdmin;
+		this.passwordAdmin = passwordAdmin;
 	}
 	
 	public String getpasswordAdmin () {
