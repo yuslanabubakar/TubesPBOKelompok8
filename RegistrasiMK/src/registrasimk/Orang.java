@@ -10,5 +10,22 @@ package registrasimk;
  * @author PRAKTIKUM
  */
 public abstract class Orang {
+    private String nama;
+    private String id;
     
-}
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+    public String getNama() {
+        return nama;
+    }
+    public void setID(String id){
+        this.id = id;
+    }
+    public String getID() {
+        return id;
+    }
+    public void display() {
+        
+    }
+} 
