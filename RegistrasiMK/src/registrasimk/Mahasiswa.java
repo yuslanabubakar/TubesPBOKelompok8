@@ -16,14 +16,28 @@ public class Mahasiswa extends Orang {
     private String usernameMhs;
     private String passwordMhs;
     private int semester;
-    private int indexKelas;
+    
+    public Mahasiswa(String nama, String id, String usernameMhs, String passwordMhs, int semester) {
+        super(nama, id);
+        this.usernameMhs = usernameMhs;
+        this.passwordMhs = passwordMhs;
+        this.semester = semester;
+    }
     
     public void setUsernameMhs(String usernameMhs) {
         this.usernameMhs = usernameMhs;
     }
     
+    public String getUsernameMhs() {
+        return usernameMhs;
+    }
+    
     public void setPasswordMhs(String passwordMhs) {
         this.passwordMhs = passwordMhs;
+    }
+    
+    public String getPasswordMhs() {
+        return passwordMhs;
     }
 
     public int getSemester() {

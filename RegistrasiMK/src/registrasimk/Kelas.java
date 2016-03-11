@@ -16,7 +16,12 @@ public class Kelas {
     private Dosen dosen;
     private String namaKelas;
 
-
+    public Kelas(String namaKelas, Dosen dosen, Matakuliah matakuliah) {
+        this.namaKelas = namaKelas;
+        this.dosen = dosen;
+        this.matakuliah = matakuliah;
+    }
+    
     public Matakuliah getMatakuliah() {
         return matakuliah;
     }
