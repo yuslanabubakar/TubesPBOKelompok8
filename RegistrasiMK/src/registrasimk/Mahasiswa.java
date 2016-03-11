@@ -9,16 +9,11 @@ package registrasimk;
  *
  * @author PRAKTIKUM
  */
-public class Mahasiswa extends Orang {
-   private Kelas[] pilihan = new Kelas[10];
-   private String usernameMhs;
-   private String passwordMhs;
-   private int semester;
-   private int idKelas;
-   
+public class Mahasiswa {
+    
    public void setNama(String nama) {
        super.setNama(nama);
-   }
+}
    
    public void setID(String id) {
        super.setID(id);
