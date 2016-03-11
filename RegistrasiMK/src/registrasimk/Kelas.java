@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Kelas {
     private Matakuliah matakuliah;
     private Dosen dosen;
+    private String namaKelas;
 
 
     public Matakuliah getMatakuliah() {
@@ -30,5 +31,13 @@ public class Kelas {
 
     public void setDosen(Dosen dosen) {
         this.dosen = dosen;
+    }
+
+    public String getNamaKelas() {
+        return namaKelas;
+    }
+
+    public void setNamaKelas(String namaKelas) {
+        this.namaKelas = namaKelas;
     }
 }

@@ -37,4 +37,22 @@ public class Mahasiswa extends Orang {
     public void addKelas(Kelas k) {
         pilihan.add(k);
     }
+    
+    public void removeKelas(String namaKelas) {
+        for (int i = 0; i < pilihan.size(); i++) {
+            if ( pilihan.get(i).getNamaKelas().equals(namaKelas) ) {
+                pilihan.remove(i);
+            }
+        }
+    }
+    
+    public Kelas getKelas(String namaKelas) {
+        Kelas kelas = null;
+        for (int i = 0; i < pilihan.size(); i++) {
+            if ( pilihan.get(i).getNamaKelas().equals(namaKelas) ) {
+                kelas = pilihan.get(i);
+            }
+        }
+        return kelas;
+    }
 }
