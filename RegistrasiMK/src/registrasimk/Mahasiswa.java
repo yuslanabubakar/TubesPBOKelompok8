@@ -16,6 +16,7 @@ public class Mahasiswa extends Orang {
     private String usernameMhs;
     private String passwordMhs;
     private int semester;
+    private int total = 0;
     
     public Mahasiswa(String nama, String id, String usernameMhs, String passwordMhs, int semester) {
         super(nama, id);
@@ -68,6 +69,17 @@ public class Mahasiswa extends Orang {
             }
         }
         return kelas;
+    }
+    
+    public Kelas getDaftarKelas(int index) {
+        return pilihan.get(index);
+    }
+    
+    public int getTotalKelas() {
+        for (int i = 0; i < pilihan.size(); i++) {
+            total++; 
+        }
+        return total;
     }
     
     public String display() {

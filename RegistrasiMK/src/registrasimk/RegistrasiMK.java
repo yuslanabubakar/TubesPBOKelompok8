@@ -36,13 +36,13 @@ public class RegistrasiMK {
         System.out.println("Nama Mahasiswa : " + mhs1.getNama());
         System.out.println("Semester : " + mhs1.getSemester());
         System.out.println("Daftar Kelas Yang Diambil :");
-        System.out.println("Kelas ke-1 :");
-        System.out.println("Nama Matakuliah : " + mhs1.getKelas("Kelas 01").getMatakuliah().getnamaMK());
-        System.out.println("Nama Dosen : " + mhs1.getKelas("Kelas 01").getDosen().getNama());
-        System.out.println();
-        System.out.println("Kelas ke-2 :");
-        System.out.println("Nama Matakuliah : " + mhs1.getKelas("Kelas 02").getMatakuliah().getnamaMK());
-        System.out.println("Nama Dosen : " + mhs1.getKelas("Kelas 02").getDosen().getNama());
+        for (int i = 0; i < mhs1.getTotalKelas(); i++) {
+            System.out.println("Kelas ke-" + (i+1) + " : ");
+            System.out.println("Nama Kelas : " + mhs1.getDaftarKelas(i).getNamaKelas());
+            System.out.println("Nama Dosen : " + mhs1.getDaftarKelas(i).getDosen().getNama());
+            System.out.println("Nama MataKuliah : " + mhs1.getDaftarKelas(i).getMatakuliah().getnamaMK());
+            System.out.println();
+        }
     }
     
 }
