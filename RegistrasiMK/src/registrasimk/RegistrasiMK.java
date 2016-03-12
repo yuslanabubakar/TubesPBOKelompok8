@@ -38,11 +38,10 @@ public class RegistrasiMK {
         System.out.println("Daftar Kelas Yang Diambil :");
         for (int i = 0; i < mhs1.getTotalKelas(); i++) {
             System.out.println("Kelas ke-" + (i+1) + " : ");
-            System.out.println("Nama Kelas : " + mhs1.getDaftarKelas(i).getNamaKelas());
-            System.out.println("Nama Dosen : " + mhs1.getDaftarKelas(i).getDosen().getNama());
-            System.out.println("Nama MataKuliah : " + mhs1.getDaftarKelas(i).getMatakuliah().getnamaMK());
+            System.out.println("Nama Kelas : " + mhs1.getKelas(i).getNamaKelas());
+            System.out.println("Nama Dosen : " + mhs1.getKelas(i).getDosen().getNama());
+            System.out.println("Nama Matakuliah : " + mhs1.getKelas(i).getMatakuliah().getnamaMK());
             System.out.println();
         }
     }
-    
 }
