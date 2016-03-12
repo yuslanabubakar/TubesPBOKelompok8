@@ -29,4 +29,5 @@ public abstract class Orang {
     public String getID() {
         return id;
     }
+    public abstract String display();
 } 
