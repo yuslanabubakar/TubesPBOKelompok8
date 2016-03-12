@@ -13,4 +13,8 @@ public class Dosen extends Orang{
     public Dosen(String nama, String id) {
         super(nama,id);
     }
+    @Override
+    public String display() {
+        return("Nama: "+getNama()+"\n"+"ID Dosen: "+getID());
+    }
 }
