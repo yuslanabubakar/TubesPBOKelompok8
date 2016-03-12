@@ -33,5 +33,9 @@ public class Admin extends Orang {
 	public String getpasswordAdmin () {
 		return passwordAdmin;
 	}
+        
+        public String display() {
+            return ("Selamat datang Admin");
+        }
 	
 }
