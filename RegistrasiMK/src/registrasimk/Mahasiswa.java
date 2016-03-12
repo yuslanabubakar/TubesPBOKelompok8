@@ -69,4 +69,8 @@ public class Mahasiswa extends Orang {
         }
         return kelas;
     }
+    
+    public String display() {
+        return ("Nama Mahasiswa : " + getNama() + "\n" + "ID Mahasiswa : " + getID());
+    }
 }
