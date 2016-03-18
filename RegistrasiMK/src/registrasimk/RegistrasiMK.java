@@ -5,6 +5,11 @@
  */
 package registrasimk;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 /**
  *
  * @author M. Yuslan Abubakar
@@ -14,34 +19,32 @@ public class RegistrasiMK {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        Dosen d1 = new Dosen("Pa Aji","dsn1");
-        Dosen d2 = new Dosen("Pa Bams","dsn2");
+    public static void main(String[] args) throws IOException {
+        FileOutputStream fos1 = new FileOutputStream("akun.txt");
+        ObjectOutputStream obj1 = new ObjectOutputStream(fos1);
         
-        Matakuliah m1 = new Matakuliah();
-        m1.setnamaMK("KalkulusII");
-        Matakuliah m2 = new Matakuliah();
-        m2.setnamaMK("FisikaII");
+        FileOutputStream fos2 = new FileOutputStream("dosen.txt");
+        ObjectOutputStream obj2 = new ObjectOutputStream(fos2);
         
-        Kelas k1 = new Kelas("Kelas 01",d1,m1);
-        Kelas k2 = new Kelas("Kelas 02",d2,m2);
+        Mahasiswa mhs1 = new Mahasiswa("Jono","MHS1","jonojono","passwordjono",4);
+        Mahasiswa mhs2 = new Mahasiswa("Budi","MHS2","budibudi","passwordbudi",5);
         
-        Mahasiswa mhs1 = new Mahasiswa("Ucok Baba","mahasiswa1","ucokbaba","123456",4);
+        Admin admin = new Admin("Dani","ADM1");
+        admin.setusernameAdmin("adminadmin");
+        admin.setpasswordAdmin("passwordadmin");
         
-        mhs1.addKelas(k1);
-        mhs1.addKelas(k2);
+        Dosen dsn1 = new Dosen("Bambang","DSN1");
         
-        System.out.println("Data Mahasiswa :");
-        System.out.println();
-        System.out.println("Nama Mahasiswa : " + mhs1.getNama());
-        System.out.println("Semester : " + mhs1.getSemester());
-        System.out.println("Daftar Kelas Yang Diambil :");
-        for (int i = 0; i < mhs1.getTotalKelas(); i++) {
-            System.out.println("Kelas ke-" + (i+1) + " : ");
-            System.out.println("Nama Kelas : " + mhs1.getKelas(i).getNamaKelas());
-            System.out.println("Nama Dosen : " + mhs1.getKelas(i).getDosen().getNama());
-            System.out.println("Nama Matakuliah : " + mhs1.getKelas(i).getMatakuliah().getnamaMK());
-            System.out.println();
-        }
+        obj1.writeObject(mhs1);
+        obj1.writeObject(mhs2);
+        obj1.writeObject(admin);
+        
+        obj2.writeObject(dsn1);
+        
+        obj1.flush();
+        obj2.flush();
+        
+        
+        
     }
 }

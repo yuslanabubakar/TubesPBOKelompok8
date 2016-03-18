@@ -74,6 +74,10 @@ public class Mahasiswa extends Orang {
         return pilihan.get(index);
     }
     
+    public ArrayList<Kelas> getAllKelas() {
+        return pilihan;
+    }
+    
     public int getTotalKelas() {
         return pilihan.size();
     }
