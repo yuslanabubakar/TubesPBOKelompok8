@@ -16,12 +16,14 @@ public class Mahasiswa extends Orang {
     private String usernameMhs;
     private String passwordMhs;
     private int semester;
+    private String jurusan;
     
-    public Mahasiswa(String nama, String id, String usernameMhs, String passwordMhs, int semester) {
+    public Mahasiswa(String nama, String id, String usernameMhs, String passwordMhs, int semester, String jurusan) {
         super(nama, id);
         this.usernameMhs = usernameMhs;
         this.passwordMhs = passwordMhs;
         this.semester = semester;
+        this.jurusan = jurusan;
     }
     
     public void setUsernameMhs(String usernameMhs) {

@@ -26,11 +26,11 @@ public class Aplikasi {
         daftarMahasiswa.add(m);
     }
     
-    public void addKelas(Kelas k) {
+    public void menuSatuAdmin(Kelas k) {
         daftarKelas.add(k);
     }
     
-    public void addMatakuliah(Matakuliah mk) {
+    public void menuDuaAdmin(Matakuliah mk) {
         daftarMatakuliah.add(mk);
     }
     
@@ -66,35 +66,63 @@ public class Aplikasi {
         daftarMatakuliah.remove(id);
     }
     
-    public void addMatakuliahToKelas(Kelas k, Matakuliah mk) {
+    public void menuTigaAdmin(Kelas k, Matakuliah mk) {
         k.setMatakuliah(mk);
     }
     
-    public void addDosenToKelas(Kelas k, Dosen d) {
+    public void menuSatuMhs(Mahasiswa m, Kelas k) {
+        m.addKelas(k);
+    }
+    
+    public void menuEmpatAdmin(Kelas k, Dosen d) {
         k.setDosen(d);
     }
     
-    public void removeKelasByMahasiswa(Mahasiswa m, Kelas k) {
+    public void menuDuaMhs(Mahasiswa m, Kelas k) {
         String namaKelas = k.getNamaKelas();
         m.removeKelas(namaKelas);
     }
     
-    public ArrayList<Kelas> viewDataKelasMahasiswa(Mahasiswa m) {
+    public ArrayList<Kelas> menuTigaMhs(Mahasiswa m) {
         return m.getAllKelas();
     }
     
     public void mainMenu() {
-        int pilihan = 1;
-        while (pilihan != 0) {
-            Scanner input = new Scanner(System.in);
-            int menu = input.nextInt();
+        int pilihan1 = 1;
+        while (pilihan1 != 0) {
+            Scanner angka = new Scanner(System.in);
+            Scanner huruf = new Scanner(System.in);
             
-            System.out.println("SELAMAT DATANG DI APLIKASI REGISTRASI MK");
+            System.out.println("APLIKASI REGISTRASI MATA KULIAH");
             System.out.println();
             System.out.println("1. Login Admin");
             System.out.println("2. Login Mahasiswa");
             System.out.println("0. Keluar Aplikasi");
-            System.out.println("Pilih Menu : ");
+            System.out.print("Pilih Menu : ");
+            int menu1 = angka.nextInt();
+            
+            if (menu1 == 1) {
+                System.out.print("Masukkan Username Admin : ");
+                String username = huruf.next();
+                System.out.print("Masukkan Password Admin : ");
+                String password = huruf.next();
+            }
+            
+            else if (menu1 == 2) {
+                System.out.print("Masukkan Username Mahasiswa : ");
+                String username = huruf.next();
+                System.out.print("Masukkan Password Mahasiswa : ");
+                String password = huruf.next();
+            }
+            
+            else if (menu1 == 0) {
+                System.out.println("TERIMA KASIH");
+                pilihan1 = 0;
+            }
+            
+            else {
+                System.out.println("Maaf, menu salah");
+            }
         }
     }
     

@@ -21,8 +21,8 @@ public class RegistrasiMK {
      */
     public static void main(String[] args) throws IOException {
         try {
-            Mahasiswa mhs1 = new Mahasiswa("Jono","MHS1","jonojono","passwordjono",4);
-            Mahasiswa mhs2 = new Mahasiswa("Budi","MHS2","budibudi","passwordbudi",5);
+            Mahasiswa mhs1 = new Mahasiswa("Jono","MHS1","jonojono","passwordjono",4,"Informatika");
+            Mahasiswa mhs2 = new Mahasiswa("Budi","MHS2","budibudi","passwordbudi",5,"Informatika");
 
             Admin admin = new Admin("Dani","ADM1");
             admin.setusernameAdmin("adminadmin");
@@ -47,6 +47,9 @@ public class RegistrasiMK {
         } catch(Exception e) {
             
         }
+        
+        Aplikasi apps = new Aplikasi();
+        apps.mainMenu();
         
     }
 }

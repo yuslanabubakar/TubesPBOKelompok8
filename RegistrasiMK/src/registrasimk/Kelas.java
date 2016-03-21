@@ -21,6 +21,10 @@ public class Kelas {
         this.dosen = dosen;
         this.matakuliah = matakuliah;
     }
+
+    public Kelas(String namaKelas) {
+        this.namaKelas = namaKelas;
+    }
     
     public Matakuliah getMatakuliah() {
         return matakuliah;
