@@ -5,7 +5,14 @@
  */
 package registrasimk;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -87,7 +94,47 @@ public class Aplikasi {
         return m.getAllKelas();
     }
     
+    public void createAkun() {
+        try {
+            Mahasiswa mhs1 = new Mahasiswa("Jono","MHS1","jonojono","passwordjono",4,"Informatika");
+            Mahasiswa mhs2 = new Mahasiswa("Budi","MHS2","budibudi","passwordbudi",5,"Informatika");
+            daftarMahasiswa.add(mhs1);
+            daftarMahasiswa.add(mhs2);
+            
+            Admin admin = new Admin("Dani","ADM1");
+            admin.setusernameAdmin("adminadmin");
+            admin.setpasswordAdmin("passwordadmin");
+            
+            Dosen dsn1 = new Dosen("Bambang","DSN1");
+            daftarDosen.add(dsn1);
+            
+            FileOutputStream fos1 = new FileOutputStream("akun.txt");
+            ObjectOutputStream obj1 = new ObjectOutputStream(fos1);
+
+            FileOutputStream fos2 = new FileOutputStream("dosen.txt");
+            ObjectOutputStream obj2 = new ObjectOutputStream(fos2);
+
+            obj1.writeObject(daftarMahasiswa);
+            obj1.writeObject(admin);
+
+            obj2.writeObject(daftarDosen);
+
+            obj1.flush();
+            obj2.flush();
+        } catch (Exception e) {
+            
+        }
+    }
+    
     public void mainMenu() {
+        File file = new File("akun.txt");
+        if (file.exists()) {
+            
+        }
+        else {
+            createAkun();
+        }
+        
         int pilihan1 = 1;
         while (pilihan1 != 0) {
             Scanner angka = new Scanner(System.in);
@@ -99,31 +146,50 @@ public class Aplikasi {
             System.out.println("2. Login Mahasiswa");
             System.out.println("0. Keluar Aplikasi");
             System.out.print("Pilih Menu : ");
-            int menu1 = angka.nextInt();
             
-            if (menu1 == 1) {
-                System.out.print("Masukkan Username Admin : ");
-                String username = huruf.next();
-                System.out.print("Masukkan Password Admin : ");
-                String password = huruf.next();
-            }
-            
-            else if (menu1 == 2) {
-                System.out.print("Masukkan Username Mahasiswa : ");
-                String username = huruf.next();
-                System.out.print("Masukkan Password Mahasiswa : ");
-                String password = huruf.next();
-            }
-            
-            else if (menu1 == 0) {
-                System.out.println("TERIMA KASIH");
-                pilihan1 = 0;
-            }
-            
-            else {
-                System.out.println("Maaf, menu salah");
+            try {
+                int menu1 = angka.nextInt();
+                String username;
+                String password;
+                switch (menu1) {
+                    case 1 :
+                        System.out.print("Masukkan Username Admin : ");
+                        username = huruf.next();
+                        System.out.print("Masukkan Password Admin : ");
+                        password = huruf.next();
+
+                        try {
+                            FileInputStream fis = new FileInputStream("akun.txt");
+                            ObjectInputStream ois = new ObjectInputStream(fis);
+
+                            Admin admin = (Admin)ois.readObject();
+
+                            if ((admin.getUsernameAdmin().equalsIgnoreCase(username)) && (admin.getpasswordAdmin().equalsIgnoreCase(password))) {
+                                System.out.println("ADMIN");
+                            }
+                        } catch (Exception e) {
+                            
+                        }
+                        break;
+                        
+                    case 2 :
+                        System.out.print("Masukkan Username Mahasiswa : ");
+                        username = huruf.next();
+                        System.out.print("Masukkan Password Mahasiswa : ");
+                        password = huruf.next();
+                        break;
+                        
+                    case 0 :
+                        System.out.println("TERIMA KASIH");
+                        pilihan1 = 0;
+                        break;
+                        
+                    default :
+                        System.out.println("Menu tidak ada");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Menu Salah. Menu yang benar 1 / 2 / 0");
             }
         }
-    }
-    
+    }    
 }

@@ -33,7 +33,14 @@ public class Admin extends Orang {
 	public String getpasswordAdmin () {
 		return passwordAdmin;
 	}
+
+        public String getUsernameAdmin() {
+            return usernameAdmin;
+        }
         
+        
+        
+    @Override
         public String display() {
             return ("Selamat datang Admin");
         }

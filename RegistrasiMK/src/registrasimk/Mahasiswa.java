@@ -84,6 +84,7 @@ public class Mahasiswa extends Orang {
         return pilihan.size();
     }
     
+    @Override
     public String display() {
         return ("Nama Mahasiswa : " + getNama() + "\n" + "ID Mahasiswa : " + getID());
     }
