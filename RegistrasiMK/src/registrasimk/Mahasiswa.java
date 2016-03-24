@@ -5,13 +5,14 @@
  */
 package registrasimk;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author PRAKTIKUM
  */
-public class Mahasiswa extends Orang {
+public class Mahasiswa extends Orang implements Serializable {
     private ArrayList<Kelas> pilihan = new ArrayList<Kelas>();
     private String usernameMhs;
     private String passwordMhs;
@@ -25,6 +26,8 @@ public class Mahasiswa extends Orang {
         this.semester = semester;
         this.jurusan = jurusan;
     }
+    
+    
     
     public void setUsernameMhs(String usernameMhs) {
         this.usernameMhs = usernameMhs;

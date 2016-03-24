@@ -5,11 +5,13 @@
  */
 package registrasimk;
 
+import java.io.Serializable;
+
 /**
  *
  * @author PRAKTIKUM
  */
-public class Dosen extends Orang{
+public class Dosen extends Orang implements Serializable {
     public Dosen(String nama, String id) {
         super(nama,id);
     }

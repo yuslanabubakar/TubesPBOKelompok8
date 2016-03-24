@@ -17,6 +17,11 @@ public abstract class Orang {
         this.nama = nama;
         this.id = id;
     }
+    
+    public Orang () {
+        
+    }
+    
     public void setNama(String nama) {
         this.nama = nama;
     }

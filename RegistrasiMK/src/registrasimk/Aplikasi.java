@@ -12,7 +12,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -94,45 +93,50 @@ public class Aplikasi {
         return m.getAllKelas();
     }
     
-    public void createAkun() {
+    public void createFile() {
         try {
             Mahasiswa mhs1 = new Mahasiswa("Jono","MHS1","jonojono","passwordjono",4,"Informatika");
             Mahasiswa mhs2 = new Mahasiswa("Budi","MHS2","budibudi","passwordbudi",5,"Informatika");
             daftarMahasiswa.add(mhs1);
             daftarMahasiswa.add(mhs2);
             
+            Dosen dsn1 = new Dosen("Bambang","DSN1");
+            daftarDosen.add(dsn1);
+            
             Admin admin = new Admin("Dani","ADM1");
             admin.setusernameAdmin("adminadmin");
             admin.setpasswordAdmin("passwordadmin");
             
-            Dosen dsn1 = new Dosen("Bambang","DSN1");
-            daftarDosen.add(dsn1);
-            
-            FileOutputStream fos1 = new FileOutputStream("akun.txt");
+            FileOutputStream fos1 = new FileOutputStream("mahasiswa.txt");
             ObjectOutputStream obj1 = new ObjectOutputStream(fos1);
 
             FileOutputStream fos2 = new FileOutputStream("dosen.txt");
             ObjectOutputStream obj2 = new ObjectOutputStream(fos2);
+            
+            FileOutputStream fos3 = new FileOutputStream("admin.txt");
+            ObjectOutputStream obj3 = new ObjectOutputStream(fos3);
 
             obj1.writeObject(daftarMahasiswa);
-            obj1.writeObject(admin);
-
             obj2.writeObject(daftarDosen);
+            obj3.writeObject(admin);
 
             obj1.flush();
             obj2.flush();
+            obj3.flush();
         } catch (Exception e) {
-            
+            System.out.println(e.getMessage());
         }
     }
     
     public void mainMenu() {
-        File file = new File("akun.txt");
-        if (file.exists()) {
+        File file1 = new File("mahasiswa.txt");
+        File file2 = new File("dosen.txt");
+        File file3 = new File("admin.txt");
+        if ((file1.exists()) && (file2.exists()) && (file3.exists())) {
             
         }
         else {
-            createAkun();
+            createFile();
         }
         
         int pilihan1 = 1;
@@ -157,18 +161,19 @@ public class Aplikasi {
                         username = huruf.next();
                         System.out.print("Masukkan Password Admin : ");
                         password = huruf.next();
-
                         try {
-                            FileInputStream fis = new FileInputStream("akun.txt");
+                            FileInputStream fis = new FileInputStream("admin.txt");
                             ObjectInputStream ois = new ObjectInputStream(fis);
 
                             Admin admin = (Admin)ois.readObject();
-
-                            if ((admin.getUsernameAdmin().equalsIgnoreCase(username)) && (admin.getpasswordAdmin().equalsIgnoreCase(password))) {
+                            if ((admin.getUsernameAdmin().equals(username)) && (admin.getpasswordAdmin().equals(password))) {
                                 System.out.println("ADMIN");
                             }
+                            else {
+                                System.out.println("SALAH");
+                            }
                         } catch (Exception e) {
-                            
+                            System.out.println(e.getMessage());
                         }
                         break;
                         

@@ -6,17 +6,23 @@
 
 package registrasimk;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Rona
  */
-public class Admin extends Orang {
+public class Admin extends Orang implements Serializable {
     private String usernameAdmin;
     private String passwordAdmin;
 	
 	public Admin (String nama, String id) {
 		super(nama,id);
 	}
+        
+        public Admin () {
+            super();
+        }
 	
 	public void setusernameAdmin (String usernameAdmin) {
 		this.usernameAdmin = usernameAdmin;
