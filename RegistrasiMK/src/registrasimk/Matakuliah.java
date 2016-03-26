@@ -6,11 +6,13 @@
 
 package registrasimk;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Rona
  */
-public class Matakuliah {
+public class Matakuliah implements Serializable {
     	private String namaMK;
 	
 	public void setnamaMK (String namaMK) {

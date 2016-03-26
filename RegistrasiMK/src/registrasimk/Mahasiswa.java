@@ -18,16 +18,15 @@ public class Mahasiswa extends Orang implements Serializable {
     private String passwordMhs;
     private int semester;
     private String jurusan;
+    private static final long serialVersionUID = -70729030451812352L;
     
     public Mahasiswa(String nama, String id, String usernameMhs, String passwordMhs, int semester, String jurusan) {
-        super(nama, id);
+        super(nama,id);
         this.usernameMhs = usernameMhs;
         this.passwordMhs = passwordMhs;
         this.semester = semester;
         this.jurusan = jurusan;
     }
-    
-    
     
     public void setUsernameMhs(String usernameMhs) {
         this.usernameMhs = usernameMhs;
@@ -51,6 +50,14 @@ public class Mahasiswa extends Orang implements Serializable {
 
     public void setSemester(int semester) {
         this.semester = semester;
+    }
+
+    public String getJurusan() {
+        return jurusan;
+    }
+
+    public void setJurusan(String jurusan) {
+        this.jurusan = jurusan;
     }
     
     public void addKelas(Kelas k) {

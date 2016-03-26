@@ -19,10 +19,6 @@ public class Admin extends Orang implements Serializable {
 	public Admin (String nama, String id) {
 		super(nama,id);
 	}
-        
-        public Admin () {
-            super();
-        }
 	
 	public void setusernameAdmin (String usernameAdmin) {
 		this.usernameAdmin = usernameAdmin;

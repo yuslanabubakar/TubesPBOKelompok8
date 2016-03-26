@@ -5,13 +5,14 @@
  */
 package registrasimk;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author PRAKTIKUM
  */
-public class Kelas {
+public class Kelas implements Serializable {
     private Matakuliah matakuliah;
     private Dosen dosen;
     private String namaKelas;
