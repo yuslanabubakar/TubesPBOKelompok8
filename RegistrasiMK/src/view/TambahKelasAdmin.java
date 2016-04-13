@@ -31,16 +31,16 @@ public class TambahKelasAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBatal = new javax.swing.JButton();
-        btnSimpan = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txFieldNamaKelas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnBatal.setText("BATAL");
+        btnCancel.setText("CANCEL");
 
-        btnSimpan.setText("SIMPAN");
+        btnSave.setText("SAVE");
 
         jLabel1.setText("Nama Kelas  :");
 
@@ -51,13 +51,13 @@ public class TambahKelasAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSimpan)
+                    .addComponent(btnSave)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txFieldNamaKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBatal))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(btnCancel))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,8 +68,8 @@ public class TambahKelasAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBatal)
-                    .addComponent(btnSimpan))
+                    .addComponent(btnCancel)
+                    .addComponent(btnSave))
                 .addGap(24, 24, 24))
         );
 
@@ -81,25 +81,30 @@ public class TambahKelasAdmin extends javax.swing.JFrame {
      */
 
     public void setKelas(String kelas) {
-        txFieldNamaKelas.getText();
+        txFieldNamaKelas.setText(kelas);
     }
     
-    public Object getBtnSimpan() {
-        return btnSimpan;
+    public String getKelas() {
+        return txFieldNamaKelas.getText();
     }
     
-    public Object getBtnBatal() {
-        return btnBatal;
+    public Object getBtnSave() {
+        return btnSave;
+    }
+    
+    public Object getBtnCancel() {
+        return btnCancel;
     }
     
     public void addListener(ActionListener a) {
-        btnSimpan.addActionListener(a);
-        btnBatal.addActionListener(a);
+        btnSave.addActionListener(a);
+        btnCancel.addActionListener(a);
+        txFieldNamaKelas.addActionListener(a);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBatal;
-    private javax.swing.JButton btnSimpan;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txFieldNamaKelas;
     // End of variables declaration//GEN-END:variables

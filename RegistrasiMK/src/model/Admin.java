@@ -24,10 +24,6 @@ public class Admin extends Orang implements Serializable {
 		this.usernameAdmin = usernameAdmin;
 	}
 	
-	public String usernameAdmin() {
-		return usernameAdmin;
-	}
-	
 	public void setpasswordAdmin (String passwordAdmin) {
 		this.passwordAdmin = passwordAdmin;
 	}

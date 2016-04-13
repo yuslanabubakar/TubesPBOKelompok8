@@ -32,8 +32,8 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnHapus = new javax.swing.JButton();
-        btnBatal = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
         comboPilihKelas = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         listKelas = new javax.swing.JList();
@@ -42,9 +42,9 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
 
         jLabel1.setText("Pilih Kelas  :");
 
-        btnHapus.setText("HAPUS");
+        btnDelete.setText("DELETE");
 
-        btnBatal.setText("BATAL");
+        btnCancel.setText("CANCEL");
 
         comboPilihKelas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboPilihKelas.setSelectedItem(listKelas);
@@ -71,9 +71,9 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(57, 57, 57)
-                                .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
@@ -94,8 +94,8 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
@@ -110,17 +110,17 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
      * @param args the command line arguments
      * @return 
      */
-    public Object getBtnBatal() {
-        return btnBatal;
+    public Object getBtnCancel() {
+        return btnCancel;
     }
     
-    public Object getBtnHapus() {
-        return btnHapus;
+    public Object getBtnDelete() {
+        return btnDelete;
     }
     
     public void addListener(ActionListener a) {
-        btnHapus.addActionListener(a);
-        btnBatal.addActionListener(a);
+        btnDelete.addActionListener(a);
+        btnCancel.addActionListener(a);
     }
     
     public void setListKelas(String[] dataKelas) {
@@ -130,8 +130,8 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBatal;
-    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JComboBox comboPilihKelas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
