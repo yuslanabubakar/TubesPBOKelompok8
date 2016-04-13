@@ -6,6 +6,7 @@
 package view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -115,6 +116,11 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
     
     public void setListKelas(String[] dataKelas) {
         listKelas.setListData(dataKelas);
+    }
+    
+    public void setComboPilihan(String[] listKelas) {
+        comboPilihan = new JComboBox(listKelas);
+        comboPilihan.getSelectedItem();
     }
     
     public void addListener(ActionListener e) {
