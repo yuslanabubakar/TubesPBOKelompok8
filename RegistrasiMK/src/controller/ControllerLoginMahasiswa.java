@@ -13,6 +13,7 @@ import model.Mahasiswa;
 import view.Home;
 import view.HomeMahasiswa;
 import view.LoginMahasiswa;
+import view.TambahKelasMahasiswa;
 
 /**
  *
@@ -36,9 +37,11 @@ public class ControllerLoginMahasiswa implements ActionListener {
         if (source.equals(view.getBtnLogin())) {
             if (app.isMahasiswaTrue(view.getUsername(), view.getPassword()) == true) {
                 HomeMahasiswa viewMahasiswa = new HomeMahasiswa();
+                TambahKelasMahasiswa viewM = new TambahKelasMahasiswa();
                 viewMahasiswa.setVisible(true);
                 viewMahasiswa.addListener(this);
                 viewMahasiswa.addMahasiswa(app.getTrueMahasiswa(view.getUsername(), view.getPassword()));
+                viewM.addMahasiswa(app.getTrueMahasiswa(view.getUsername(), view.getPassword()));
                 view.dispose();
             }
             else {

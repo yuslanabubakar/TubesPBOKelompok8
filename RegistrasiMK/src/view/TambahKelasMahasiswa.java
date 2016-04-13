@@ -6,7 +6,9 @@
 package view;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JComboBox;
+import model.Mahasiswa;
 
 /**
  *
@@ -118,9 +120,20 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         listKelas.setListData(dataKelas);
     }
     
-    public void setComboPilihan(String[] listKelas) {
-        comboPilihan = new JComboBox(listKelas);
-        comboPilihan.getSelectedItem();
+    public void setIsiComboBox(String namaKelas) {
+        comboPilihan.addItem(namaKelas);
+    }
+    
+    public String getIsiComboBox() {
+        return comboPilihan.getSelectedItem().toString();
+    }
+    
+    public void addMahasiswa(Mahasiswa mahasiswa) {
+        this.mahasiswa = mahasiswa;
+    }
+    
+    public Mahasiswa getMahasiswa() {
+        return mahasiswa;
     }
     
     public void addListener(ActionListener e) {
@@ -129,6 +142,7 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         comboPilihan.addActionListener(e);
     }
 
+    private Mahasiswa mahasiswa;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSave;

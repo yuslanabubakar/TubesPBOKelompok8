@@ -423,9 +423,11 @@ public class Aplikasi {
                                                 Kelas k = new Kelas(namaKelas);
                                                 saveListKelasToFile(addKelas(k));
                                                 System.out.println("Kelas Berhasil Ditambahkan");
+                                                System.out.println();
                                             }
                                             else {
                                                 System.out.println("Kelas Sudah Tersedia");
+                                                System.out.println();
                                             }
                                             break;
 
@@ -436,9 +438,11 @@ public class Aplikasi {
                                                 matkul.setnamaMK(namaMatkul);
                                                 saveListMatkulToFile(addMatakuliah(matkul));
                                                 System.out.println("Matakuliah Berhasil Ditambahkan");
+                                                System.out.println();
                                             }
                                             else {
                                                 System.out.println("Matakuliah Sudah Tersedia");
+                                                System.out.println();
                                             }
                                             break;
 
@@ -451,7 +455,7 @@ public class Aplikasi {
                                             kelas.get(kelasPilih-1).setMatakuliah(getMatakuliah(matkulPilih-1));
                                             saveListKelasToFile(kelas);
                                             System.out.println("Matakuliah Telah Berhasil Ditambahkan");
-
+                                            System.out.println();
                                             break;
 
                                         case 4 :
@@ -463,6 +467,7 @@ public class Aplikasi {
                                             kelas.get(kelasPilih-1).setDosen(getDosen(dosenPilih-1));
                                             saveListKelasToFile(kelas);
                                             System.out.println("Dosen Telah Berhasil Ditambahkan");
+                                            System.out.println();
                                             break;
 
                                         case 5 :
@@ -533,10 +538,12 @@ public class Aplikasi {
                                             mhs.get(index).addKelas(getKelas(pilihKelas-1));
                                             saveListMahasiswaToFile(mhs);
                                             System.out.println("Kelas Berhasil Ditambahkan");
+                                            System.out.println();
                                             break;
                                         }
                                         else {
                                             System.out.println("Kelas Sudah Diambil");
+                                            System.out.println();
                                         }
                                         break;
                                         
@@ -588,7 +595,7 @@ public class Aplikasi {
                                         else {
                                             System.out.println("Kelas Tidak Ada");
                                         }
-                                        
+                                        System.out.println();
                                         break;
                                         
                                     case 3 : 
