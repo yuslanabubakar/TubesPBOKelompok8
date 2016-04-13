@@ -135,6 +135,8 @@ public class LoginAdmin extends javax.swing.JFrame {
     public void addListener(ActionListener a) {
         btnLogin.addActionListener(a);
         btnBack.addActionListener(a);
+        txFieldUsername.addActionListener(a);
+        txFieldPassword.addActionListener(a);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
