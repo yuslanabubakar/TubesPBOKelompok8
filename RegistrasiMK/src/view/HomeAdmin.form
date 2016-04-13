@@ -115,7 +115,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txFieldNIP" max="32767" attributes="0"/>
+                      <Component id="txFieldNip" max="32767" attributes="0"/>
                       <Component id="txFieldNama" pref="191" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="19" max="32767" attributes="0"/>
@@ -128,7 +128,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txFieldNIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txFieldNip" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -151,7 +151,7 @@
             <Property name="text" type="java.lang.String" value="Nama  :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txFieldNIP">
+        <Component class="javax.swing.JTextField" name="txFieldNip">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>

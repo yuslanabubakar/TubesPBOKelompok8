@@ -37,7 +37,7 @@ public class HomeAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txFieldNIP = new javax.swing.JTextField();
+        txFieldNip = new javax.swing.JTextField();
         txFieldNama = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -74,7 +74,7 @@ public class HomeAdmin extends javax.swing.JFrame {
 
         jLabel2.setText("Nama  :");
 
-        txFieldNIP.setEditable(false);
+        txFieldNip.setEditable(false);
 
         txFieldNama.setEditable(false);
 
@@ -89,7 +89,7 @@ public class HomeAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txFieldNIP)
+                    .addComponent(txFieldNip)
                     .addComponent(txFieldNama, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
@@ -99,7 +99,7 @@ public class HomeAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txFieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txFieldNip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -179,7 +179,7 @@ public class HomeAdmin extends javax.swing.JFrame {
     }
     
     public void setTxFieldNIP(String NIP) {
-        txFieldNIP.setText(NIP);
+        txFieldNip.setText(NIP);
     }
     
     public void setTxFieldNama(String nama) {
@@ -195,7 +195,7 @@ public class HomeAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField txFieldNIP;
     private javax.swing.JTextField txFieldNama;
+    private javax.swing.JTextField txFieldNip;
     // End of variables declaration//GEN-END:variables
 }

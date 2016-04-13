@@ -34,8 +34,8 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         listKelas = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         comboPilihan = new javax.swing.JComboBox();
-        btnSimpan = new javax.swing.JButton();
-        btnBatal = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,9 +56,9 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
             }
         });
 
-        btnSimpan.setText("SIMPAN");
+        btnSave.setText("SAVE");
 
-        btnBatal.setText("BATAL");
+        btnCancel.setText("CANCEL");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,10 +73,10 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboPilihan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 228, Short.MAX_VALUE)
-                        .addComponent(btnSimpan)
+                        .addGap(0, 234, Short.MAX_VALUE)
+                        .addComponent(btnSave)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBatal)))
+                        .addComponent(btnCancel)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -90,8 +90,8 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
                     .addComponent(comboPilihan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSimpan)
-                    .addComponent(btnBatal))
+                    .addComponent(btnSave)
+                    .addComponent(btnCancel))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
@@ -105,12 +105,12 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public Object getBtnBatal() {
-        return btnBatal;
+    public Object getBtnCancel() {
+        return btnCancel;
     }
     
-    public Object getBtnSimpan() {
-        return btnSimpan;
+    public Object getBtnSave() {
+        return btnSave;
     }
     
     public void setListKelas(String[] dataKelas) {
@@ -118,13 +118,14 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
     }
     
     public void addListener(ActionListener e) {
-        btnBatal.addActionListener(e);
-        btnSimpan.addActionListener(e);
+        btnCancel.addActionListener(e);
+        btnSave.addActionListener(e);
+        comboPilihan.addActionListener(e);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBatal;
-    private javax.swing.JButton btnSimpan;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSave;
     private javax.swing.JComboBox comboPilihan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

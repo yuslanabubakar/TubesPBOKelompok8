@@ -42,6 +42,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("APLIKASI REGISTRASI MATAKULIAH");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -144,6 +145,8 @@ public class LoginMahasiswa extends javax.swing.JFrame {
     public void addListener(ActionListener e) {
         btnLogin.addActionListener(e);
         btnBack.addActionListener(e);
+        txFieldPassword.addActionListener(e);
+        txFieldUsername.addActionListener(e);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
