@@ -277,7 +277,7 @@ public class HomeMahasiswa extends javax.swing.JFrame {
         this.mahasiswa = mahasiswa;
     }
     
-    public Mahasiswa getMahasiswa() {
+    public static Mahasiswa getMahasiswa() {
         return mahasiswa;
     }
     
@@ -302,7 +302,7 @@ public class HomeMahasiswa extends javax.swing.JFrame {
         btnDelete.addActionListener(e);
     }
 
-    private Mahasiswa mahasiswa;
+    private static Mahasiswa mahasiswa;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
