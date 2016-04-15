@@ -52,7 +52,9 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
         Object source = ae.getSource();
         
         if(source.equals(view.getBtnCancel())) {
-            ControllerHomeMahasiswa hm = new ControllerHomeMahasiswa();
+            HomeMahasiswa hm = new HomeMahasiswa();
+            hm.inputData(null);
+            hm.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
             view.dispose();
         } else if(source.equals(view.getBtnDelete())) {
             int index = getIndex(HomeMahasiswa.getMahasiswa());
