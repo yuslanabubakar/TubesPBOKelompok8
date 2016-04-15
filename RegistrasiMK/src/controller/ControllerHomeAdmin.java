@@ -41,9 +41,9 @@ public class ControllerHomeAdmin implements ActionListener{
         } else if(source.equals(view.getBtnTambahMatkul())) {
             ControllerTambahMatkulAdmin tma = new ControllerTambahMatkulAdmin();
         } else if(source.equals(view.getBtnTambahDsnKls())) {
-            
+            ControllerTambahDosenkeKelasAdmin tdka = new ControllerTambahDosenkeKelasAdmin();
         } else if(source.equals(view.getBtnTambahMatkulKls())) {
-            
+            ControllerTambahMatkulkeKelasAdmin tmka = new ControllerTambahMatkulkeKelasAdmin();
         } else if(source.equals(view.getBtnLogout())) {
             ControllerLoginAdmin cla = new ControllerLoginAdmin();
             view.dispose();

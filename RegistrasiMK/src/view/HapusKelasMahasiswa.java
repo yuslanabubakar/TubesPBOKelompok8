@@ -23,6 +23,7 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
     public HapusKelasMahasiswa() {
         initComponents();
         setTitle("Hapus Kelas");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -49,8 +50,6 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
 
         btnCancel.setText("CANCEL");
 
-        comboPilihKelas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboPilihKelas.setSelectedItem(listKelas);
         comboPilihKelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboPilihKelasActionPerformed(evt);
@@ -129,6 +128,7 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
     public void addListener(ActionListener a) {
         btnDelete.addActionListener(a);
         btnCancel.addActionListener(a);
+        comboPilihKelas.addActionListener(a);
     }
     
  public void setHeader() {
@@ -145,6 +145,14 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
                 listKelas.get(i).getDosen().getNama()
             });
         }
+    }
+    
+    public void setIsiComboBox(String namaKelas) {
+        comboPilihKelas.addItem(namaKelas);
+    }
+    
+    public String getIsiComboBox() {
+        return comboPilihKelas.getSelectedItem().toString();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

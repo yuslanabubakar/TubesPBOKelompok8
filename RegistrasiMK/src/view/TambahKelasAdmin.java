@@ -20,6 +20,7 @@ public class TambahKelasAdmin extends javax.swing.JFrame {
     public TambahKelasAdmin() {
         initComponents();
         setTitle("Tambah Kelas Baru");
+        setLocationRelativeTo(null);
     }
 
     /**
