@@ -8,6 +8,8 @@ package view;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
+import javax.swing.table.DefaultTableModel;
+import model.Kelas;
 import model.Mahasiswa;
 
 /**
@@ -22,6 +24,7 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
     public TambahKelasMahasiswa() {
         initComponents();
         setTitle("Tambah Kelas");
+        setHeader();
     }
 
     /**
@@ -33,26 +36,17 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listKelas = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         comboPilihan = new javax.swing.JComboBox();
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableKelas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        listKelas.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listKelas);
-
         jLabel1.setText("Pilih Kelas : ");
 
-        comboPilihan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboPilihan.setSelectedItem(listKelas);
         comboPilihan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboPilihanActionPerformed(evt);
@@ -63,6 +57,19 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
 
         btnCancel.setText("CANCEL");
 
+        tableKelas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tableKelas);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,24 +77,26 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboPilihan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 234, Short.MAX_VALUE)
-                        .addComponent(btnSave)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancel)))
+                        .addGap(0, 5, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnSave)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCancel))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(comboPilihan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -95,7 +104,7 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
                     .addComponent(btnCancel))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,10 +125,6 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         return btnSave;
     }
     
-    public void setListKelas(String[] dataKelas) {
-        listKelas.setListData(dataKelas);
-    }
-    
     public void setIsiComboBox(String namaKelas) {
         comboPilihan.addItem(namaKelas);
     }
@@ -136,6 +141,21 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         return mahasiswa;
     }
     
+    public void setHeader() {
+        String[] header = {"No","Kelas","Matakuliah","Dosen"};
+        DefaultTableModel model = new DefaultTableModel(null, header);
+        tableKelas.setModel(model);
+    }
+    
+    public void inputData(ArrayList<Kelas> listKelas) {
+        DefaultTableModel model = (DefaultTableModel) tableKelas.getModel();
+        for (int i = 0; i < listKelas.size(); i++) {
+            model.addRow(new String[]{(i+1)+"",listKelas.get(i).getNamaKelas(),
+                listKelas.get(i).getMatakuliah().getnamaMK(),
+                listKelas.get(i).getDosen().getNama()});
+        }
+    }
+    
     public void addListener(ActionListener e) {
         btnCancel.addActionListener(e);
         btnSave.addActionListener(e);
@@ -148,7 +168,7 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox comboPilihan;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList listKelas;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tableKelas;
     // End of variables declaration//GEN-END:variables
 }

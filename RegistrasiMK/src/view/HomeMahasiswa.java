@@ -6,6 +6,9 @@
 package view;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.Kelas;
 import model.Mahasiswa;
 
 /**
@@ -20,6 +23,7 @@ public class HomeMahasiswa extends javax.swing.JFrame {
     public HomeMahasiswa() {
         initComponents();
         setTitle("Mahasiswa");
+        setHeader();
     }
 
     /**
@@ -49,8 +53,8 @@ public class HomeMahasiswa extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listKelas = new javax.swing.JList();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableKelas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -165,19 +169,25 @@ public class HomeMahasiswa extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnDelete)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Kelas Tersedia"));
 
-        listKelas.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listKelas);
+        tableKelas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tableKelas);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -185,15 +195,15 @@ public class HomeMahasiswa extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,11 +213,11 @@ public class HomeMahasiswa extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(82, 82, 82)
+                        .addGap(29, 29, 29)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -224,9 +234,9 @@ public class HomeMahasiswa extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -251,10 +261,6 @@ public class HomeMahasiswa extends javax.swing.JFrame {
         txFieldJurusan.setText(jurusan);
     }
     
-    public void setListKelas(String[] list) {
-        listKelas.setListData(list);
-    }
-    
     public Object getBtnLogout() {
         return btnLogout;
     }
@@ -273,6 +279,21 @@ public class HomeMahasiswa extends javax.swing.JFrame {
     
     public Mahasiswa getMahasiswa() {
         return mahasiswa;
+    }
+    
+    public void setHeader() {
+        String[] header = {"No","Kelas","Matakuliah","Dosen"};
+        DefaultTableModel model = new DefaultTableModel(null, header);
+        tableKelas.setModel(model);
+    }
+    
+    public void inputData(ArrayList<Kelas> listKelas) {
+        DefaultTableModel model = (DefaultTableModel) tableKelas.getModel();
+        for (int i = 0; i < listKelas.size(); i++) {
+            model.addRow(new String[]{(i+1)+"",listKelas.get(i).getNamaKelas(),
+                listKelas.get(i).getMatakuliah().getnamaMK(),
+                listKelas.get(i).getDosen().getNama()});
+        }
     }
     
     public void addListener(ActionListener e) {
@@ -297,8 +318,8 @@ public class HomeMahasiswa extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList listKelas;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tableKelas;
     private javax.swing.JTextField txFieldJurusan;
     private javax.swing.JTextField txFieldNama;
     private javax.swing.JTextField txFieldNim;
