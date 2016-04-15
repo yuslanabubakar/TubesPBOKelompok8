@@ -271,10 +271,29 @@ public class HomeAdmin extends javax.swing.JFrame {
     public void inputData(ArrayList<Kelas> listKelas) {
         DefaultTableModel model = (DefaultTableModel) tabKelas.getModel();
         for (int i = 0; i < listKelas.size(); i++) {
-            model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
-                listKelas.get(i).getMatakuliah().getnamaMK(),
-                listKelas.get(i).getDosen().getNama()
-            });
+            if(listKelas.get(i).getMatakuliah()!=null) {
+                if(listKelas.get(i).getDosen()!=null) {
+                    model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        listKelas.get(i).getMatakuliah().getnamaMK(),
+                        listKelas.get(i).getDosen().getNama()
+                    });
+                } else {
+                    model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        listKelas.get(i).getMatakuliah().getnamaMK(),
+                        ""
+                    });
+                }
+            } else if(listKelas.get(i).getDosen()!=null) {
+                model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        "",
+                        listKelas.get(i).getDosen().getNama()
+                    });
+            } else {
+                model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        "",
+                        ""
+                    });
+            }
         }
     }
 
