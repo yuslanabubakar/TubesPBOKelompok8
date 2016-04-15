@@ -20,6 +20,8 @@ public class TambahDosenkeKelasAdmin extends javax.swing.JFrame {
      */
     public TambahDosenkeKelasAdmin() {
         initComponents();
+        setTitle("Tambah Dosen ke Kelas");
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -44,7 +46,7 @@ public class TambahDosenkeKelasAdmin extends javax.swing.JFrame {
 
         jLabel2.setText("Nama Kelas          :");
 
-        btnAdd.setText("Add");
+        btnAdd.setText("Save");
 
         btnCancel.setText("Cancel");
 
