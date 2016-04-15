@@ -36,7 +36,8 @@ public class ControllerLoginMahasiswa implements ActionListener {
         if (source.equals(view.getBtnLogin())) {
             if (app.isMahasiswaTrue(view.getUsername(), view.getPassword()) == true) {
                 Mahasiswa m = app.getTrueMahasiswa(view.getUsername(), view.getPassword());
-                ControllerHomeMahasiswa home = new ControllerHomeMahasiswa(m);
+                HomeMahasiswa.addMahasiswa(m);
+                ControllerHomeMahasiswa home = new ControllerHomeMahasiswa();
                 view.dispose();
             }
             else {

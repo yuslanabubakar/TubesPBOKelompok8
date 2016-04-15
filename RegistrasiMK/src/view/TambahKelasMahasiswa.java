@@ -134,14 +134,6 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         return comboPilihan.getSelectedItem().toString();
     }
     
-    public void addMahasiswa(Mahasiswa mahasiswa) {
-        this.mahasiswa = mahasiswa;
-    }
-    
-    public static Mahasiswa getMahasiswa() {
-        return mahasiswa;
-    }
-    
     public void setHeader() {
         String[] header = {"No","Kelas","Matakuliah","Dosen"};
         DefaultTableModel model = new DefaultTableModel(null, header);
@@ -162,8 +154,6 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         btnSave.addActionListener(e);
         comboPilihan.addActionListener(e);
     }
-
-    private static Mahasiswa mahasiswa;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnSave;

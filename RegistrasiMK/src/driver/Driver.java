@@ -5,12 +5,9 @@
  */
 package driver;
 
-import model.Aplikasi;
-import java.io.FileOutputStream;
+import controller.ControllerHome;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import view.TambahKelasMahasiswa;
+import model.Aplikasi;
 
 /**
  *
@@ -23,6 +20,8 @@ public class Driver {
      */
     public static void main(String[] args) throws IOException {
         Aplikasi apps = new Aplikasi();
-        apps.mainMenu();
+//        apps.mainMenu();
+        ControllerHome home = new ControllerHome();
+        apps.createFile();
     }
 }

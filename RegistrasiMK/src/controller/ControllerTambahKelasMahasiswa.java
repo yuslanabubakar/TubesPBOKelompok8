@@ -27,7 +27,7 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
         app = new Aplikasi();
         view = new TambahKelasMahasiswa();
         view.setVisible(true);
-        view.addListener(null);
+        view.addListener(this);
         
         view.inputData(app.getListKelasFromFile());
         
@@ -37,8 +37,8 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
     }
     
     public boolean cekKelas(String namaKelas) {
-        for (int i = 0; i < view.getMahasiswa().getAllKelas().size(); i++) {
-            if (view.getMahasiswa().getAllKelas().get(i).getNamaKelas().equals(namaKelas)) {
+        for (int i = 0; i < HomeMahasiswa.getMahasiswa().getAllKelas().size(); i++) {
+            if (HomeMahasiswa.getMahasiswa().getAllKelas().get(i).getNamaKelas().equals(namaKelas)) {
                 return false;
             }
         }
@@ -70,7 +70,7 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
         if (source.equals(view.getBtnSave())) {
             if (cekKelas(view.getIsiComboBox()) == true) {
                 ArrayList<Mahasiswa> mhs = app.getListMahasiswaFromFile();
-                mhs.get(getIndexMahasiswa(view.getMahasiswa())).addKelas(getKelas(view.getIsiComboBox()));
+                mhs.get(getIndexMahasiswa(HomeMahasiswa.getMahasiswa())).addKelas(getKelas(view.getIsiComboBox()));
                 app.saveListMahasiswaToFile(mhs);
                 JOptionPane.showMessageDialog(null, "Kelas Berhasil Ditambahkan");
             }
@@ -79,9 +79,8 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
             }
         }
         else if (source.equals(view.getBtnCancel())) {
-            HomeMahasiswa viewHome = new HomeMahasiswa();
-            viewHome.setVisible(true);
-            viewHome.addListener(this);
+            HomeMahasiswa home = new HomeMahasiswa();
+            home.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
             view.dispose();
         }
     }

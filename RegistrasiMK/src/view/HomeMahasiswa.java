@@ -274,8 +274,8 @@ public class HomeMahasiswa extends javax.swing.JFrame {
         return btnDelete;
     }
     
-    public void addMahasiswa(Mahasiswa mahasiswa) {
-        this.mahasiswa = mahasiswa;
+    public static void addMahasiswa(Mahasiswa m) {
+        mahasiswa = m;
     }
     
     public static Mahasiswa getMahasiswa() {

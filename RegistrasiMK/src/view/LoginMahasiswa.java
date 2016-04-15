@@ -131,7 +131,8 @@ public class LoginMahasiswa extends javax.swing.JFrame {
     }
     
     public String getPassword() {
-        return txFieldPassword.getPassword().toString();
+        String s = new String(txFieldPassword.getPassword());
+        return s;
     }
     
     public Object getBtnLogin() {
