@@ -28,6 +28,12 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
         view = new TambahKelasMahasiswa();
         view.setVisible(true);
         view.addListener(null);
+        
+        view.inputData(app.getListKelasFromFile());
+        
+        for (int i = 0; i < app.getListKelasFromFile().size(); i++) {
+            view.setIsiComboBox(app.getListKelasFromFile().get(i).getNamaKelas());
+        }
     }
     
     public boolean cekKelas(String namaKelas) {
@@ -60,16 +66,6 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
-        
-        ArrayList<String> listKelas = new ArrayList();
-        for (int i = 0; i < app.getListKelasFromFile().size(); i++) {
-            String s = (i+1) + ". " + app.getListKelasFromFile().get(i).getNamaKelas()
-                    + " - " + app.getListKelasFromFile().get(i).getMatakuliah().getnamaMK()
-                    + " - " + app.getListKelasFromFile().get(i).getDosen().getNama();
-            listKelas.add(s);
-            view.setIsiComboBox(app.getListKelasFromFile().get(i).getNamaKelas());
-        }
-        view.setListKelas(listKelas.toArray(new String[0]));
         
         if (source.equals(view.getBtnSave())) {
             if (cekKelas(view.getIsiComboBox()) == true) {

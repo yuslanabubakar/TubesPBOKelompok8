@@ -33,15 +33,10 @@ public class ControllerLoginMahasiswa implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
-        
         if (source.equals(view.getBtnLogin())) {
             if (app.isMahasiswaTrue(view.getUsername(), view.getPassword()) == true) {
-                HomeMahasiswa viewMahasiswa = new HomeMahasiswa();
-                TambahKelasMahasiswa viewM = new TambahKelasMahasiswa();
-                viewMahasiswa.setVisible(true);
-                viewMahasiswa.addListener(this);
-                viewMahasiswa.addMahasiswa(app.getTrueMahasiswa(view.getUsername(), view.getPassword()));
-                viewM.addMahasiswa(app.getTrueMahasiswa(view.getUsername(), view.getPassword()));
+                Mahasiswa m = app.getTrueMahasiswa(view.getUsername(), view.getPassword());
+                ControllerHomeMahasiswa home = new ControllerHomeMahasiswa(m);
                 view.dispose();
             }
             else {
@@ -50,9 +45,7 @@ public class ControllerLoginMahasiswa implements ActionListener {
         }
         
         else if (source.equals(view.getBtnBack())) {
-            Home viewHome = new Home();
-            viewHome.setVisible(true);
-            viewHome.addListener(this);
+            ControllerHome home = new ControllerHome();
             view.dispose();
         }
     }
