@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Aplikasi;
+import model.Kelas;
 import model.Mahasiswa;
 import view.HapusKelasMahasiswa;
 import view.HomeMahasiswa;
@@ -52,8 +53,9 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
         Object source = ae.getSource();
         
         if(source.equals(view.getBtnCancel())) {
+            ArrayList<Kelas> arrKelas = new ArrayList();
             HomeMahasiswa hm = new HomeMahasiswa();
-            hm.inputData(null);
+            hm.inputData(arrKelas);
             hm.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
             view.dispose();
         } else if(source.equals(view.getBtnDelete())) {

@@ -8,6 +8,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Aplikasi;
 import model.Kelas;
@@ -45,8 +46,9 @@ public class ControllerTambahKelasAdmin implements ActionListener{
         }
         
         else if (source.equals(view.getBtnCancel())) {
+            ArrayList<Kelas> arrKelas = new ArrayList();
             HomeAdmin ha = new HomeAdmin();
-            ha.inputData(null);
+            ha.inputData(arrKelas);
             ha.inputData(app.getListKelasFromFile());
             view.dispose();
         }
