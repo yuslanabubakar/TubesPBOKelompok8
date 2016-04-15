@@ -20,6 +20,7 @@ public class LoginAdmin extends javax.swing.JFrame {
     public LoginAdmin() {
         initComponents();
         setTitle("Login Admin");
+        setLocationRelativeTo(null);
     }
 
     /**
