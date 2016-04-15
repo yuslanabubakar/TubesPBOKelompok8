@@ -20,6 +20,8 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        setTitle("Aplikasi Registrasi Mata Kuliah");
+        setLocationRelativeTo(null);
     }
 
     /**
