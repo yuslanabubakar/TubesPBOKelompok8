@@ -44,10 +44,6 @@ public class TambahDosenkeKelasAdmin extends javax.swing.JFrame {
 
         jLabel2.setText("Nama Kelas          :");
 
-        cbNamaDosen.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cbNamaKelas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         btnAdd.setText("Add");
 
         btnCancel.setText("Cancel");
@@ -108,8 +104,26 @@ public class TambahDosenkeKelasAdmin extends javax.swing.JFrame {
     public void addListener(ActionListener a){
         btnAdd.addActionListener(a);
         btnCancel.addActionListener(a);
+        cbNamaDosen.addActionListener(a);
+        cbNamaKelas.addActionListener(a);
     }
 
+    public void setIsiDosen(String namaDosen){
+        cbNamaDosen.addItem(namaDosen);
+    }
+    
+    public void setIsiKelas(String namaKelas){
+        cbNamaKelas.addItem(namaKelas);
+    }
+    
+    public String getIsiDosen() {
+        return cbNamaDosen.getSelectedItem().toString();
+    }
+    
+    public String getIsiKelas() {
+        return cbNamaKelas.getSelectedItem().toString();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCancel;
