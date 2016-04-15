@@ -8,6 +8,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import model.Aplikasi;
 import view.HomeAdmin;
 
@@ -24,12 +25,29 @@ public class ControllerHomeAdmin implements ActionListener{
         app = new Aplikasi();
         view.setVisible(true);
         view.addListener(this);
+        
+        view.inputData(app.getListKelasFromFile());
+        
+        view.setTxFieldNIP(app.getAdminFromFile().getID());
+        view.setTxFieldNama(app.getAdminFromFile().getNama());
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
         
+        if(source.equals(view.getBtnTambahKelas())) {
+            ControllerTambahKelasAdmin tka = new ControllerTambahKelasAdmin();
+        } else if(source.equals(view.getBtnTambahMatkul())) {
+            ControllerTambahMatkulAdmin tma = new ControllerTambahMatkulAdmin();
+        } else if(source.equals(view.getBtnTambahDsnKls())) {
+            
+        } else if(source.equals(view.getBtnTambahMatkulKls())) {
+            
+        } else if(source.equals(view.getBtnLogout())) {
+            ControllerLoginAdmin cla = new ControllerLoginAdmin();
+            view.dispose();
+        }
     }
     
     

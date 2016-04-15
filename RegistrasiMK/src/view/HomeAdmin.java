@@ -7,6 +7,10 @@
 package view;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
+import model.Kelas;
 
 /**
  *
@@ -40,7 +44,13 @@ public class HomeAdmin extends javax.swing.JFrame {
         txFieldNip = new javax.swing.JTextField();
         txFieldNama = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        btnTambahKelas = new javax.swing.JButton();
+        btnTambahMatkul = new javax.swing.JButton();
+        btnTambahDsnKls = new javax.swing.JButton();
+        btnTambahMatkulKls = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabKelas = new javax.swing.JTable();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -91,7 +101,7 @@ public class HomeAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txFieldNip)
                     .addComponent(txFieldNama, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,28 +119,71 @@ public class HomeAdmin extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Menu"));
 
+        btnTambahKelas.setText("Tambah Kelas");
+
+        btnTambahMatkul.setText("Tambah Matakuliah");
+
+        btnTambahDsnKls.setText("Tambah Dosen ke Kelas");
+
+        btnTambahMatkulKls.setText("Tambah Matakuliah ke Kelas");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 284, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnTambahMatkulKls)
+                    .addComponent(btnTambahMatkul, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambahKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambahDsnKls, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 205, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnTambahKelas)
+                .addGap(29, 29, 29)
+                .addComponent(btnTambahMatkul)
+                .addGap(27, 27, 27)
+                .addComponent(btnTambahDsnKls)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(btnTambahMatkulKls)
+                .addGap(19, 19, 19))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Kelas Tersedia"));
+
+        tabKelas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tabKelas);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,14 +192,16 @@ public class HomeAdmin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLogout))
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLogout)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,11 +210,11 @@ public class HomeAdmin extends javax.swing.JFrame {
                 .addComponent(btnLogout)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -173,9 +228,29 @@ public class HomeAdmin extends javax.swing.JFrame {
     public Object getBtnLogout() {
         return btnLogout;
     }
+
+    public JButton getBtnTambahDsnKls() {
+        return btnTambahDsnKls;
+    }
+
+    public JButton getBtnTambahKelas() {
+        return btnTambahKelas;
+    }
+
+    public JButton getBtnTambahMatkul() {
+        return btnTambahMatkul;
+    }
+
+    public JButton getBtnTambahMatkulKls() {
+        return btnTambahMatkulKls;
+    }
     
     public void addListener(ActionListener a) {
         btnLogout.addActionListener(a);
+        btnTambahDsnKls.addActionListener(a);
+        btnTambahKelas.addActionListener(a);
+        btnTambahMatkul.addActionListener(a);
+        btnTambahMatkulKls.addActionListener(a);
     }
     
     public void setTxFieldNIP(String NIP) {
@@ -185,9 +260,29 @@ public class HomeAdmin extends javax.swing.JFrame {
     public void setTxFieldNama(String nama) {
         txFieldNama.setText(nama);
     }
+    
+    public void setHeader() {
+        String[] header = {"No","Kelas","Matakuliah","Dosen"};
+        DefaultTableModel model = new DefaultTableModel(null, header);
+        tabKelas.setModel(model);
+    }
+    
+    public void inputData(ArrayList<Kelas> listKelas) {
+        DefaultTableModel model = (DefaultTableModel) tabKelas.getModel();
+        for (int i = 0; i < listKelas.size(); i++) {
+            model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                listKelas.get(i).getMatakuliah().getnamaMK(),
+                listKelas.get(i).getDosen().getNama()
+            });
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnTambahDsnKls;
+    private javax.swing.JButton btnTambahKelas;
+    private javax.swing.JButton btnTambahMatkul;
+    private javax.swing.JButton btnTambahMatkulKls;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
@@ -195,6 +290,8 @@ public class HomeAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tabKelas;
     private javax.swing.JTextField txFieldNama;
     private javax.swing.JTextField txFieldNip;
     // End of variables declaration//GEN-END:variables
