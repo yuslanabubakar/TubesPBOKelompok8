@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import model.Aplikasi;
 import model.Kelas;
 import model.Matakuliah;
+import view.HomeAdmin;
 import view.TambahMatkulkeKelasAdmin;
 
 /**
@@ -64,7 +65,9 @@ public class ControllerTambahMatkulkeKelasAdmin implements ActionListener{
         ArrayList<Kelas> ak = app.getListKelasFromFile();
         
         if (source.equals(view.getBtnCancel())){
-            ControllerHomeAdmin cha = new ControllerHomeAdmin();
+            HomeAdmin ha = new HomeAdmin();
+            ha.inputData(null);
+            ha.inputData(app.getListKelasFromFile());
             view.dispose();
         }
         
