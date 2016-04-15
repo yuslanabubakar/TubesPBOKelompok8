@@ -63,6 +63,7 @@ public class ControllerTambahDosenkeKelasAdmin implements ActionListener{
             for (int i = 0; i < ak.size(); i++) {
                 if (ak.get(i).getNamaKelas().equals(view.getIsiKelas())){
                     ak.get(i).setDosen(getDosen(view.getIsiDosen()));
+                    app.saveListKelasToFile(ak);
                     JOptionPane.showMessageDialog(null, "Dosen Berhasil Ditambahkan!");
                 }
                 

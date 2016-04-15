@@ -8,8 +8,10 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Aplikasi;
+import model.Kelas;
 import model.Matakuliah;
 import view.TambahMatkulkeKelasAdmin;
 
@@ -59,6 +61,7 @@ public class ControllerTambahMatkulkeKelasAdmin implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
+        ArrayList<Kelas> ak = app.getListKelasFromFile();
         
         if (source.equals(view.getBtnCancel())){
             ControllerHomeAdmin cha = new ControllerHomeAdmin();
@@ -67,8 +70,9 @@ public class ControllerTambahMatkulkeKelasAdmin implements ActionListener{
         
         if (source.equals(view.getBtnAdd())) {
             for (int i = 0; i < app.getListKelasFromFile().size(); i++) {
-                if (app.getListKelasFromFile().get(i).getNamaKelas().equals(view.getIsiNamaKelas())){
-                    app.getListKelasFromFile().get(i).setMatakuliah(getMatakuliah(view.getIsiMatakuliah()));
+                if (ak.get(i).getNamaKelas().equals(view.getIsiNamaKelas())){
+                    ak.get(i).setMatakuliah(getMatakuliah(view.getIsiMatakuliah()));
+                    app.saveListKelasToFile(ak);
                     JOptionPane.showMessageDialog(null, "Mata Kuliah Berhasil Ditambahkan!");
                 }
                 
