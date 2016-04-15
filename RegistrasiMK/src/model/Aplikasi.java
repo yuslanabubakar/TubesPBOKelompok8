@@ -363,7 +363,7 @@ public class Aplikasi {
         }
     }
     
-    public void mainMenu() {
+    public void cekKelas() {
         File file1 = new File("mahasiswa.txt");
         File file2 = new File("dosen.txt");
         File file3 = new File("admin.txt");
@@ -375,7 +375,9 @@ public class Aplikasi {
         else {
             createFile();
         }
-        
+    }
+    
+    public void mainMenu() {
         int pilihan1 = 1;
         while (pilihan1 != 0) {
             Scanner angka = new Scanner(System.in);

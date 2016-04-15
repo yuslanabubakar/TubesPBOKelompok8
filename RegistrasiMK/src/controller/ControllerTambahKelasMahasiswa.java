@@ -68,19 +68,26 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
         Object source = ae.getSource();
         
         if (source.equals(view.getBtnSave())) {
-            if (cekKelas(view.getIsiComboBox()) == true) {
-                ArrayList<Mahasiswa> mhs = app.getListMahasiswaFromFile();
-                mhs.get(getIndexMahasiswa(HomeMahasiswa.getMahasiswa())).addKelas(getKelas(view.getIsiComboBox()));
-                app.saveListMahasiswaToFile(mhs);
-                JOptionPane.showMessageDialog(null, "Kelas Berhasil Ditambahkan");
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "Kelas Sudah Diambil");
+            try {
+                if (cekKelas(view.getIsiComboBox()) == true) {
+                    ArrayList<Mahasiswa> mhs = app.getListMahasiswaFromFile();
+                    mhs.get(getIndexMahasiswa(HomeMahasiswa.getMahasiswa())).addKelas(getKelas(view.getIsiComboBox()));
+                    app.saveListMahasiswaToFile(mhs);
+                    HomeMahasiswa home = new HomeMahasiswa();
+//                    home.inputData(listKelas);
+                    home.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
+                    JOptionPane.showMessageDialog(null, "Kelas Berhasil Ditambahkan");
+                    ArrayList<Kelas> listKelas = new ArrayList<>();
+                    
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Kelas Sudah Diambil");
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Kelas Belum Dipilih");
             }
         }
         else if (source.equals(view.getBtnCancel())) {
-            HomeMahasiswa home = new HomeMahasiswa();
-            home.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
             view.dispose();
         }
     }

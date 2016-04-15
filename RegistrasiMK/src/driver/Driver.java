@@ -22,6 +22,6 @@ public class Driver {
         Aplikasi apps = new Aplikasi();
 //        apps.mainMenu();
         ControllerHome home = new ControllerHome();
-        apps.createFile();
+        apps.cekKelas();
     }
 }
