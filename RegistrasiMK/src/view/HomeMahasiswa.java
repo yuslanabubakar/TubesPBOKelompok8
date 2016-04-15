@@ -24,6 +24,7 @@ public class HomeMahasiswa extends javax.swing.JFrame {
         initComponents();
         setTitle("Mahasiswa");
         setHeader();
+        setLocationRelativeTo(null);
     }
 
     /**

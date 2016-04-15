@@ -25,6 +25,7 @@ public class TambahKelasMahasiswa extends javax.swing.JFrame {
         initComponents();
         setTitle("Tambah Kelas");
         setHeader();
+        setLocationRelativeTo(null);
     }
 
     /**

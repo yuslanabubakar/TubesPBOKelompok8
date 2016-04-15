@@ -19,6 +19,7 @@ public class TambahMatkulAdmin extends javax.swing.JFrame {
     public TambahMatkulAdmin() {
         initComponents();
         setTitle("Tambah Mata Kuliah");
+        setLocationRelativeTo(null);
     }
 
     /**

@@ -19,7 +19,7 @@ public class LoginMahasiswa extends javax.swing.JFrame {
     public LoginMahasiswa() {
         initComponents();
         setTitle("Login Mahasiswa");
-//        FormUtil.centerWindow(this);
+        setLocationRelativeTo(null);
     }
 
     /**
