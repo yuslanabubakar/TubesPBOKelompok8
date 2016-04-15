@@ -36,9 +36,7 @@ public class ControllerLoginAdmin implements ActionListener{
         if (source.equals(view.getBtnLogin())) {
             if ((app.getAdminFromFile().getUsernameAdmin().equals(view.getUsername())) && 
                     (app.getAdminFromFile().getpasswordAdmin().equals(view.getPassword())) == true) {
-                HomeAdmin viewAdmin = new HomeAdmin();
-                viewAdmin.setVisible(true);
-                viewAdmin.addListener(this);
+                ControllerHomeAdmin cha = new ControllerHomeAdmin();
                 view.dispose();
             }
             else {
@@ -47,9 +45,7 @@ public class ControllerLoginAdmin implements ActionListener{
         }
         
         else if (source.equals(view.getBtnBack())) {
-            Home viewHome = new Home();
-            viewHome.setVisible(true);
-            viewHome.addListener(this);
+            ControllerHome ch = new ControllerHome();
             view.dispose();
         }
     }

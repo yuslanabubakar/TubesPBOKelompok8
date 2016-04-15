@@ -45,9 +45,7 @@ public class ControllerTambahKelasAdmin implements ActionListener{
         }
         
         else if (source.equals(view.getBtnCancel())) {
-            HomeAdmin viewAdmin = new HomeAdmin();
-            viewAdmin.setVisible(true);
-            viewAdmin.addListener(this);
+            ControllerHomeAdmin cha = new ControllerHomeAdmin();
             view.dispose();
         }
     }
