@@ -25,6 +25,7 @@ public class HomeAdmin extends javax.swing.JFrame {
         initComponents();
         setTitle("Admin");
         setLocationRelativeTo(null);
+        setHeader();
     }
 
     /**
