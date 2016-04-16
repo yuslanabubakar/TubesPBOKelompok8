@@ -178,14 +178,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnTambahMatkulKls" min="-2" pref="195" max="-2" attributes="0"/>
-                      <Component id="btnTambahDsnKls" min="-2" pref="195" max="-2" attributes="0"/>
-                      <Component id="btnTambahMatkul" min="-2" pref="195" max="-2" attributes="0"/>
-                      <Component id="btnTambahKelas" min="-2" pref="195" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnTambahMatkulKls" pref="225" max="32767" attributes="0"/>
+                      <Component id="btnTambahDsnKls" max="32767" attributes="0"/>
+                      <Component id="btnTambahMatkul" max="32767" attributes="0"/>
+                      <Component id="btnTambahKelas" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

@@ -146,7 +146,7 @@ public class Aplikasi {
     public void createFile() {
         try {
             Mahasiswa mhs1 = new Mahasiswa("Jono","1301149071","jonojono","passwordjono",4,"Informatika");
-            Mahasiswa mhs2 = new Mahasiswa("Anto","1301147672","antoanto","passwordbudi",5,"Desain Produk");
+            Mahasiswa mhs2 = new Mahasiswa("Anto","1301147672","antoanto","passwordanto",5,"Desain Produk");
             Mahasiswa mhs3 = new Mahasiswa("Siti","1301144573","sitisiti","passwordsiti",4,"Perhotelan");
             Mahasiswa mhs4 = new Mahasiswa("Santiko","1301144574","santikosantiko","passwordsantiko",3,"Informatika");
             Mahasiswa mhs5 = new Mahasiswa("Sinta","1301141235","sintasinta","passwordsinta",8,"Telekomunikasi");
