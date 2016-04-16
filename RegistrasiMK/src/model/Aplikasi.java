@@ -378,7 +378,7 @@ public class Aplikasi {
     } //yuslan
     
     public void mainMenu() {
-        cekKelas();
+        cekFile();
         int pilihan1 = 1;
         while (pilihan1 != 0) {
             Scanner angka = new Scanner(System.in);

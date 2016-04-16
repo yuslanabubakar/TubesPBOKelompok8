@@ -13,15 +13,14 @@ import model.Aplikasi;
  *
  * @author M. Yuslan Abubakar
  */
-public class Driver {
+public class DriverGUI {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
         Aplikasi apps = new Aplikasi();
-        // apps.mainMenu();
         ControllerHome home = new ControllerHome();
-        apps.cekKelas();
+        apps.cekFile();
     }
 }
