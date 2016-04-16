@@ -73,6 +73,8 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
                     ArrayList<Mahasiswa> mhs = app.getListMahasiswaFromFile();
                     mhs.get(getIndexMahasiswa(HomeMahasiswa.getMahasiswa())).addKelas(getKelas(view.getIsiComboBox()));
                     app.saveListMahasiswaToFile(mhs);
+                    Mahasiswa m = app.getListMahasiswaFromFile().get(getIndexMahasiswa(HomeMahasiswa.getMahasiswa()));
+                    HomeMahasiswa.addMahasiswa(m);
                     HomeMahasiswa home = new HomeMahasiswa();
 //                    home.inputData(listKelas);
                     home.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
@@ -88,6 +90,7 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
             }
         }
         else if (source.equals(view.getBtnCancel())) {
+            ControllerHomeMahasiswa home = new ControllerHomeMahasiswa();
             view.dispose();
         }
     }

@@ -37,14 +37,9 @@ public class ControllerHomeMahasiswa implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
         
-//        String semester = Integer.toString(view.getMahasiswa().getSemester());
-//        view.setTxFieldNim(view.getMahasiswa().getID());
-//        view.setTxFieldNama(view.getMahasiswa().getNama());
-//        view.setTxFieldJurusan(view.getMahasiswa().getJurusan());
-//        view.setTxFieldSemester(semester);
-        
         if (source.equals(view.getBtnAdd())) {
             ControllerTambahKelasMahasiswa tambah = new ControllerTambahKelasMahasiswa();
+            view.dispose();
         }
         else if (source.equals(view.getBtnDelete())) {
             ControllerHapusKelasMahasiswa hapus = new ControllerHapusKelasMahasiswa();

@@ -45,9 +45,7 @@ public class ControllerTambahMatkulAdmin implements ActionListener {
         }
         
         else if (source.equals(view.getBtnCancel())) {
-            HomeAdmin viewAdmin = new HomeAdmin();
-            viewAdmin.setVisible(true);
-            viewAdmin.addListener(this);
+            ControllerHomeAdmin home = new ControllerHomeAdmin();
             view.dispose();
         }
     }
