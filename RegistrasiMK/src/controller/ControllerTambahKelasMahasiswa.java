@@ -47,7 +47,7 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
     
     public int getIndexMahasiswa(Mahasiswa m) {
         for (int i = 0; i < app.getListMahasiswaFromFile().size(); i++) {
-            if (app.getListMahasiswaFromFile().get(i).equals(m)) {
+            if (app.getListMahasiswaFromFile().get(i).getUsernameMhs().equals(m.getUsernameMhs())) {
                 return i;
             }
         }
@@ -76,11 +76,8 @@ public class ControllerTambahKelasMahasiswa implements ActionListener {
                     Mahasiswa m = app.getListMahasiswaFromFile().get(getIndexMahasiswa(HomeMahasiswa.getMahasiswa()));
                     HomeMahasiswa.addMahasiswa(m);
                     HomeMahasiswa home = new HomeMahasiswa();
-//                    home.inputData(listKelas);
                     home.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
                     JOptionPane.showMessageDialog(null, "Kelas Berhasil Ditambahkan");
-                    ArrayList<Kelas> listKelas = new ArrayList<>();
-                    
                 }
                 else {
                     JOptionPane.showMessageDialog(null, "Kelas Sudah Diambil");

@@ -30,7 +30,7 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
         view.setVisible(true);
         view.addListener(this);
         
-        view.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
+        view.inputData(app.getListMahasiswaFromFile().get(getIndex(HomeMahasiswa.getMahasiswa())).getAllKelas());
         
         for (int i = 0; i < HomeMahasiswa.getMahasiswa().getAllKelas().size(); i++) {
             view.setIsiComboBox(HomeMahasiswa.getMahasiswa().getAllKelas().get(i).getNamaKelas());
@@ -39,7 +39,7 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
     
     public int getIndex(Mahasiswa m) {
         for (int i = 0; i < app.getListMahasiswaFromFile().size(); i++) {
-            if (app.getListMahasiswaFromFile().get(i).equals(m)) {
+            if (app.getListMahasiswaFromFile().get(i).getUsernameMhs().equals(m.getUsernameMhs())) {
                 return i;
             }
         }
@@ -51,6 +51,7 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
         Object source = ae.getSource();
         
         if(source.equals(view.getBtnCancel())) {
+            ControllerHomeMahasiswa home = new ControllerHomeMahasiswa();
             view.dispose();
         } else if(source.equals(view.getBtnDelete())) {
             int index = getIndex(HomeMahasiswa.getMahasiswa());
@@ -58,7 +59,7 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
                 try {
                     ArrayList<Mahasiswa> mhs = app.getListMahasiswaFromFile();
                     mhs.get(index).removeKelas(view.getIsiComboBox());
-                    app.saveListMahasiswaToFile(app.getListMahasiswaFromFile());
+                    app.saveListMahasiswaToFile(mhs);
                     JOptionPane.showMessageDialog(null, "Kelas Berhasil Dihapus");
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Kelas Belum Dipilih");

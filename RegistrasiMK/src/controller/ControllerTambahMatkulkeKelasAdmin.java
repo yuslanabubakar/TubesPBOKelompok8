@@ -75,13 +75,18 @@ public class ControllerTambahMatkulkeKelasAdmin implements ActionListener{
         }
         
         if (source.equals(view.getBtnAdd())) {
-            for (int i = 0; i < app.getListKelasFromFile().size(); i++) {
-                if (ak.get(i).getNamaKelas().equals(view.getIsiNamaKelas())){
-                    ak.get(i).setMatakuliah(getMatakuliah(view.getIsiMatakuliah()));
-                    app.saveListKelasToFile(ak);
-                    JOptionPane.showMessageDialog(null, "Mata Kuliah Berhasil Ditambahkan!");
-                }
+            if (cekMatkul(ak, view.getIsiMatakuliah()) == true) {
+                for (int i = 0; i < app.getListKelasFromFile().size(); i++) {
+                    if (ak.get(i).getNamaKelas().equals(view.getIsiNamaKelas())){
+                        ak.get(i).setMatakuliah(getMatakuliah(view.getIsiMatakuliah()));
+                        app.saveListKelasToFile(ak);
+                        JOptionPane.showMessageDialog(null, "Mata Kuliah Berhasil Ditambahkan!");
+                    }
                 
+                }
+            } 
+            else {
+                JOptionPane.showMessageDialog(null, "Mata Kuliah Telah Diambil di Kelas Lain");
             }
         }
     }
