@@ -378,6 +378,7 @@ public class Aplikasi {
     }
     
     public void mainMenu() {
+        cekKelas();
         int pilihan1 = 1;
         while (pilihan1 != 0) {
             Scanner angka = new Scanner(System.in);
