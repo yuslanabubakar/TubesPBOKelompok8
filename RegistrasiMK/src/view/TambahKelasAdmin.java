@@ -38,6 +38,7 @@ public class TambahKelasAdmin extends javax.swing.JFrame {
         txFieldNamaKelas = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(java.awt.Color.white);
 
         btnCancel.setText("CANCEL");
 

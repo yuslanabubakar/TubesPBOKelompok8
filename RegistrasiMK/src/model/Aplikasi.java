@@ -26,76 +26,76 @@ public class Aplikasi {
     
     public void addDosen(Dosen d) {
         daftarDosen.add(d);
-    }
+    } //rona
     
     public void addMahasiswa(Mahasiswa m) {
         daftarMahasiswa.add(m);
-    }
+    } //rona
     
     public ArrayList<Kelas> addKelas(Kelas k) {
         ArrayList<Kelas> kelas = getListKelasFromFile();
         kelas.add(k);
         return kelas;
-    }
+    } //rona
     
     public ArrayList<Matakuliah> addMatakuliah(Matakuliah mk) {
         ArrayList<Matakuliah> matakuliah = getListMatkulFromFile();
         matakuliah.add(mk);
         return matakuliah;
-    }
+    } //rona
     
     public Dosen getDosen(int id) {
         return getListDosenFromFile().get(id);
-    }
+    } //dhiva
     
     public Mahasiswa getMahasiswa(int id) {
         return getListMahasiswaFromFile().get(id);
-    }
+    } //dhiva
     
     public Kelas getKelas(int id) {
         return getListKelasFromFile().get(id);
-    }
+    } //dhiva
     
     public Matakuliah getMatakuliah(int id) {
         return getListMatkulFromFile().get(id);
-    }
+    } //dhiva
     
     public void deleteDosen(int id) {
         daftarDosen.remove(id);
-    }
+    } //rona
     
     public void deleteMahasiswa(int id) {
         daftarMahasiswa.remove(id);
-    }
+    } //rona
     
     public void deleteKelas(int id) {
         daftarKelas.remove(id);
-    }
+    } //rona
     
     public void deleteMatakuliah(int id) {
         daftarMatakuliah.remove(id);
-    }
+    } //rona
     
     public void addMatkulToKelas(Kelas k, Matakuliah mk) {
         k.setMatakuliah(mk);
-    }
+    } //dhiva
     
     public void addKelasToMahasiswa(Mahasiswa m, Kelas k) {
         m.addKelas(k);
-    }
+    } //dhiva
     
     public void addDosenToKelas(Kelas k, Dosen d) {
         k.setDosen(d);
-    }
+    } //dhiva
     
     public void removeKelasFromMahasiswa(Mahasiswa m, Kelas k) {
         String namaKelas = k.getNamaKelas();
         m.removeKelas(namaKelas);
-    }
+    } //dhiva
     
     public ArrayList<Kelas> viewAllKelasByMahasiswa(Mahasiswa m) {
         return m.getAllKelas();
-    }
+    } //rona
     
     public void viewAllNamaKelas() {
         for (int i = 0; i < getListKelasFromFile().size(); i++) {
@@ -105,7 +105,7 @@ public class Aplikasi {
                 System.out.println(e.getMessage());
             }
         }
-    }
+    } //dhiva
     
     public void viewAllKelas() {
         for (int i = 0; i < getListKelasFromFile().size(); i++) {
@@ -127,19 +127,19 @@ public class Aplikasi {
         if (getListKelasFromFile().size() == 0) {
             System.out.println("Kelas Kosong");
         }
-    }
+    } //yuslan
     
     public void viewAllMatkul() {
         for (int i = 0; i < getListMatkulFromFile().size(); i++) {
             System.out.println((i+1) + ". " + getListMatkulFromFile().get(i).getnamaMK());
         }
-    }
+    } //dhiva
     
     public void viewAllDosen() {
         for (int i = 0; i < getListDosenFromFile().size(); i++) {
             System.out.println((i+1) + ". " + getListDosenFromFile().get(i).getNama());
         }
-    }
+    } //dhiva
     
     /* FILE */
     
@@ -210,7 +210,7 @@ public class Aplikasi {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } //rona
     
     public Admin getAdminFromFile() {
         try {
@@ -223,7 +223,7 @@ public class Aplikasi {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    } //rona
     
     public ArrayList<Mahasiswa> getListMahasiswaFromFile() {
         try {
@@ -236,7 +236,7 @@ public class Aplikasi {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    } //rona
     
     public ArrayList<Dosen> getListDosenFromFile() {
         try {
@@ -249,7 +249,7 @@ public class Aplikasi {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    } //rona
     
     public ArrayList<Kelas> getListKelasFromFile() {
         try {
@@ -262,7 +262,7 @@ public class Aplikasi {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    } //rona
     
     public ArrayList<Matakuliah> getListMatkulFromFile() {
         try {
@@ -275,7 +275,7 @@ public class Aplikasi {
             System.out.println(e.getMessage());
             return null;
         }
-    }
+    } //rona
     
     public void saveListMahasiswaToFile(ArrayList<Mahasiswa> mahasiswa) {
         try {
@@ -287,7 +287,7 @@ public class Aplikasi {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } //dhiva
     
     public void saveListKelasToFile(ArrayList<Kelas> kelas) {
         try {
@@ -299,7 +299,7 @@ public class Aplikasi {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } //dhiva
     
     public void saveListMatkulToFile(ArrayList<Matakuliah> matakuliah) {
         try {
@@ -311,7 +311,7 @@ public class Aplikasi {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
+    } //dhiva
     
     public Mahasiswa getTrueMahasiswa (String username, String password) {
         for (int i = 0; i < getListMahasiswaFromFile().size(); i++) {
@@ -321,7 +321,7 @@ public class Aplikasi {
             }
         }
         return null;
-    }
+    } //dhiva
     
     public boolean isMahasiswaTrue(String username, String password) {
         for (int i = 0; i < getListMahasiswaFromFile().size(); i++) {
@@ -331,7 +331,7 @@ public class Aplikasi {
             }
         }
         return false;
-    }
+    } 
     
     public boolean isDuplikatKelas(String namaKelas) {
         int total = 0;
@@ -346,7 +346,7 @@ public class Aplikasi {
         else {
             return true;
         }
-    }
+    } //yuslan
     
     public boolean isDuplikatMatkul(String namaMatkul) {
         int total = 0;
@@ -361,9 +361,9 @@ public class Aplikasi {
         else {
             return true;
         }
-    }
+    } //yuslan
     
-    public void cekKelas() {
+    public void cekFile() {
         File file1 = new File("mahasiswa.txt");
         File file2 = new File("dosen.txt");
         File file3 = new File("admin.txt");
@@ -375,7 +375,7 @@ public class Aplikasi {
         else {
             createFile();
         }
-    }
+    } //yuslan
     
     public void mainMenu() {
         cekKelas();
@@ -386,8 +386,8 @@ public class Aplikasi {
             
             System.out.println("                    APLIKASI REGISTRASI MATA KULIAH");
             System.out.println();
-            System.out.println("1. Login Admin");
-            System.out.println("2. Login Mahasiswa");
+            System.out.println("1. Login Admin"); //dhiva,rona
+            System.out.println("2. Login Mahasiswa"); //yuslan
             System.out.println("0. Keluar Aplikasi");
             System.out.print("Pilih Menu : ");
             
@@ -409,12 +409,12 @@ public class Aplikasi {
                             
                             while (pilihan2 != 0) {
                                 System.out.println("MENU ADMIN : ");
-                                System.out.println("1. Tambah Kelas Baru");
-                                System.out.println("2. Tambah Matakuliah Baru");
-                                System.out.println("3. Tambah Matakuliah ke Kelas");
-                                System.out.println("4. Tambah Dosen ke Kelas");
-                                System.out.println("5. View Kelas");
-                                System.out.println("0. Logout");
+                                System.out.println("1. Tambah Kelas Baru"); //rona
+                                System.out.println("2. Tambah Matakuliah Baru"); //rona
+                                System.out.println("3. Tambah Matakuliah ke Kelas"); //dhiva
+                                System.out.println("4. Tambah Dosen ke Kelas"); //dhiva
+                                System.out.println("5. View Kelas"); //rona
+                                System.out.println("0. Logout"); //rona
                                 System.out.print("Masukkan Menu : ");
                                 
                                 try {
@@ -648,5 +648,5 @@ public class Aplikasi {
                 System.out.println("Menu Salah");
             }
         }
-    }    
+    }    //yuslan,dhiva,rona
 }
