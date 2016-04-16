@@ -140,10 +140,29 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
     public void inputData(ArrayList<Kelas> listKelas) {
         DefaultTableModel model = (DefaultTableModel) tabKelas.getModel();
         for (int i = 0; i < listKelas.size(); i++) {
-            model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
-                listKelas.get(i).getMatakuliah().getnamaMK(),
-                listKelas.get(i).getDosen().getNama()
-            });
+           if(listKelas.get(i).getMatakuliah()!=null) { //kalo matkul ada
+                if(listKelas.get(i).getDosen()!=null) { //matkul ada, dosen ada
+                    model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        listKelas.get(i).getMatakuliah().getnamaMK(),
+                        listKelas.get(i).getDosen().getNama()
+                    });
+                } else { //matkul ada, dosen ga ada
+                    model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        listKelas.get(i).getMatakuliah().getnamaMK(),
+                        ""
+                    });
+                }
+            } else if(listKelas.get(i).getDosen()!=null) { //kalo matkul ga ada, dosen ada
+                model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        "",
+                        listKelas.get(i).getDosen().getNama()
+                    });
+            } else { //matkul dan dosen ga ada
+                model.addRow(new String[] {(i+1)+"",listKelas.get(i).getNamaKelas(),
+                        "",
+                        ""
+                    });
+            }
         }
     }
     
