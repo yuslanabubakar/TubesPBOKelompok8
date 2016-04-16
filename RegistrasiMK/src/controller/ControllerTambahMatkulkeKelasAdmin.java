@@ -38,16 +38,21 @@ public class ControllerTambahMatkulkeKelasAdmin implements ActionListener{
         }
         
         for (int i = 0; i < app.getListMatkulFromFile().size(); i++) {
-            for (int j = 0; j < app.getListKelasFromFile().size(); j++) {
-                if (app.getListMatkulFromFile().get(i).getnamaMK().equals(app.getListKelasFromFile().get(j).getMatakuliah().getnamaMK())) {
-                    
-                }
-                else {
-                    view.setIsiMatakuliah(app.getListMatkulFromFile().get(i).getnamaMK());
-                }
-            }
+            view.setIsiMatakuliah(app.getListMatkulFromFile().get(i).getnamaMK());
         }
      
+    }
+    
+    public boolean cekMatkul(ArrayList<Kelas> listKelas, String namaMatkul){
+        for (int i = 0; i < listKelas.size(); i++) {
+            if (listKelas.get(i).getMatakuliah() != null){
+                if (listKelas.get(i).getMatakuliah().getnamaMK().equals(namaMatkul)){
+                    return false;
+                }
+            }
+            
+        }
+        return true;
     }
     
     public Matakuliah getMatakuliah(String nama){
@@ -65,10 +70,7 @@ public class ControllerTambahMatkulkeKelasAdmin implements ActionListener{
         ArrayList<Kelas> ak = app.getListKelasFromFile();
         
         if (source.equals(view.getBtnCancel())){
-            ArrayList<Kelas> ka = new ArrayList<>();
-            HomeAdmin ha = new HomeAdmin();
-            ha.inputData(ka);
-            ha.inputData(app.getListKelasFromFile());
+            ControllerHomeAdmin home = new ControllerHomeAdmin();
             view.dispose();
         }
         
