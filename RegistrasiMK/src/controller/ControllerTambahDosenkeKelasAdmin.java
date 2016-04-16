@@ -57,10 +57,7 @@ public class ControllerTambahDosenkeKelasAdmin implements ActionListener{
         ArrayList<Kelas> ak = app.getListKelasFromFile();
 
         if (source.equals(view.getBtnCancel())){
-            ArrayList<Kelas> ka = new ArrayList<>();
-            HomeAdmin ha = new HomeAdmin();
-            ha.inputData(ka);
-            ha.inputData(app.getListKelasFromFile());
+            ControllerHomeAdmin home = new ControllerHomeAdmin();
             view.dispose();
         }
         if (source.equals(view.getBtnAdd())) {
