@@ -31,19 +31,23 @@ public class ControllerHomeAdmin implements ActionListener{
         view.setTxFieldNIP(app.getAdminFromFile().getID());
         view.setTxFieldNama(app.getAdminFromFile().getNama());
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
         
         if(source.equals(view.getBtnTambahKelas())) {
             ControllerTambahKelasAdmin tka = new ControllerTambahKelasAdmin();
+            view.dispose();
         } else if(source.equals(view.getBtnTambahMatkul())) {
             ControllerTambahMatkulAdmin tma = new ControllerTambahMatkulAdmin();
+            view.dispose();
         } else if(source.equals(view.getBtnTambahDsnKls())) {
             ControllerTambahDosenkeKelasAdmin tdka = new ControllerTambahDosenkeKelasAdmin();
+            view.dispose();
         } else if(source.equals(view.getBtnTambahMatkulKls())) {
             ControllerTambahMatkulkeKelasAdmin tmka = new ControllerTambahMatkulkeKelasAdmin();
+            view.dispose();
         } else if(source.equals(view.getBtnLogout())) {
             ControllerLoginAdmin cla = new ControllerLoginAdmin();
             view.dispose();

@@ -37,11 +37,9 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
         }
     }
     
-    ArrayList<Mahasiswa> listMahasiswa = app.getListMahasiswaFromFile();
-    
     public int getIndex(Mahasiswa m) {
-        for (int i = 0; i < listMahasiswa.size(); i++) {
-            if (listMahasiswa.get(i).equals(m)) {
+        for (int i = 0; i < app.getListMahasiswaFromFile().size(); i++) {
+            if (app.getListMahasiswaFromFile().get(i).equals(m)) {
                 return i;
             }
         }
@@ -53,16 +51,21 @@ public class ControllerHapusKelasMahasiswa implements ActionListener{
         Object source = ae.getSource();
         
         if(source.equals(view.getBtnCancel())) {
-            ArrayList<Kelas> arrKelas = new ArrayList();
-            HomeMahasiswa hm = new HomeMahasiswa();
-            hm.inputData(arrKelas);
-            hm.inputData(HomeMahasiswa.getMahasiswa().getAllKelas());
             view.dispose();
         } else if(source.equals(view.getBtnDelete())) {
             int index = getIndex(HomeMahasiswa.getMahasiswa());
-            listMahasiswa.get(index).removeKelas(view.getIsiComboBox());
-            app.saveListMahasiswaToFile(listMahasiswa);
-            JOptionPane.showMessageDialog(null, "Kelas Berhasil Dihapus");
+            if (HomeMahasiswa.getMahasiswa().getAllKelas()!=null) {
+                try {
+                    ArrayList<Mahasiswa> mhs = app.getListMahasiswaFromFile();
+                    mhs.get(index).removeKelas(view.getIsiComboBox());
+                    app.saveListMahasiswaToFile(app.getListMahasiswaFromFile());
+                    JOptionPane.showMessageDialog(null, "Kelas Berhasil Dihapus");
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Kelas Belum Dipilih");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Kelas Kosong");
+            }
         }
     }
     

@@ -24,6 +24,7 @@ public class HapusKelasMahasiswa extends javax.swing.JFrame {
         initComponents();
         setTitle("Hapus Kelas");
         setLocationRelativeTo(null);
+        setHeader();
     }
 
     /**
